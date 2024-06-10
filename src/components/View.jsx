@@ -1,7 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import NavBar from './NavBar'
 
 const View = () => {
+
+ const [data,changedata]=useState(
+  [
+    {"title":"wings of fire",
+    "author":"Dr.APJ abdul kalam",
+    "price":"600",
+    "description":"engaging"}
+  ]
+ )
+
+  
   return (
     <div>
 <NavBar/>
@@ -15,77 +26,35 @@ const View = () => {
     <table className="table">
   <thead>
     <tr>
-      <th scope="col">No</th>
-      <th scope="col">Book title</th>
-      <th scope="col">Author</th>
-      <th scope="col">Publisher</th>
-      <th scope="col">Price</th>
+      <th scope="col">title</th>
+      <th scope="col">author</th>
+      <th scope="col">price</th>
+      <th scope="col">description</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td scope="row">1</td>
-      <td>wings</td>
-      <td>Otto</td>
-      <td>yono</td>
-      <td>400</td>
-    </tr>
-    <tr>
-    <td scope="row">1</td>
-      <td>wings</td>
-      <td>Otto</td>
-      <td>yono</td>
-      <td>400</td>
-    </tr>
-    <tr>
-    <td scope="row">1</td>
-      <td>wings</td>
-      <td>Otto</td>
-      <td>yono</td>
-      <td>400</td>
-    </tr>
-    <tr>
-    <td scope="row">1</td>
-      <td>wings</td>
-      <td>Otto</td>
-      <td>yono</td>
-      <td>400</td>
-    </tr>
-    <tr>
-    <td scope="row">1</td>
-      <td>wings</td>
-      <td>Otto</td>
-      <td>yono</td>
-      <td>400</td>
-    </tr>
-    <tr>
-    <td scope="row">1</td>
-      <td>wings</td>
-      <td>Otto</td>
-      <td>yono</td>
-      <td>400</td>
-    </tr>
-    <tr>
-    <td scope="row">1</td>
-      <td>wings</td>
-      <td>Otto</td>
-      <td>yono</td>
-      <td>400</td>
-    </tr>
-    <tr>
-    <td scope="row">1</td>
-      <td>wings</td>
-      <td>Otto</td>
-      <td>yono</td>
-      <td>400</td>
-    </tr>
-    <tr>
-    <td scope="row">1</td>
-      <td>wings</td>
-      <td>Otto</td>
-      <td>yono</td>
-      <td>400</td>
-    </tr>
+
+    {
+      data.map(
+        (value,index)=>{
+          return <tr>
+          <td scope="row">{value.title}</td>
+          <td>{value.author}</td>
+          <td>{value.price}</td>
+          <td>{value.description}</td>
+          
+        </tr>
+        }
+      )
+    }
+    
+   
+    
+
+    
+    
+    
+    
 
   </tbody>
 </table>
