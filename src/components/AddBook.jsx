@@ -13,13 +13,13 @@ const AddBook = () => {
     )
     const inputHandler = (event) => {
         changeData({
-            ...data, [event.target.name]:
-                [event.target.value]
-        })
-    }
+            ...data,
+            [event.target.name]: event.target.value 
+        });
+    };
     const readValue = () => {
         console.log(data)
-        axios.post("").then(
+        axios.post("http://localhost:8081/add", data).then(
             (response) => {
                 console.log(response)
                 if (response.data.status == "success") {
