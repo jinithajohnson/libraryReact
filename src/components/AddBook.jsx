@@ -20,17 +20,17 @@ const AddBook = () => {
     const readValue = () => {
         console.log(data)
         axios.post("").then(
-                (response)=>{
-                    console.log(response)
-                    if(response.data.status=="success"){
-                        alert("success")
-                    
-                    }
-                    else{
-                        alert("error")
-                    }
+            (response) => {
+                console.log(response)
+                if (response.data.status == "success") {
+                    alert("success")
+
                 }
-            ).catch()
+                else {
+                    alert("error")
+                }
+            }
+        ).catch()
     }
     return (
         <div>
